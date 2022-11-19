@@ -1,7 +1,7 @@
 class Account:
 
     def __init__(self, name):
-        self.account_name = name
+        self.account_name = str(name)
         self.account_balance = 0
 
     def is_float(self, amount):
