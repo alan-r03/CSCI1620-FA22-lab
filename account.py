@@ -7,16 +7,13 @@ class Account:
     def is_float(self, amount):
         try:
             float(amount)
-            print(True)
             return True
         except:
-            print(False)
             return False
 
     def deposit(self, amount):
         if self.is_float(f'{amount}'.strip()):
             amount = float(f'{amount}'.strip())
-            print(amount, type(amount))
             if 0 < amount:
                 self.account_balance += round(amount, 2)
                 return True
