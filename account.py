@@ -1,8 +1,8 @@
 class Account:
 
     def __init__(self, name):
-        self.account_name: string = name
-        self.account_balance: float = 0
+        self.account_name = name
+        self.account_balance = 0
 
     def is_float(self, amount):
         try:
