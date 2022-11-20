@@ -12,8 +12,8 @@ class Account:
         account balance
         :return: None
         """
-        self.account_name: string = str(name)
-        self.account_balance: float = balance
+        self.__account_name: string = str(name)
+        self.__account_balance: float = balance
 
     def is_float(self, amount: float) -> bool:
         """
@@ -42,7 +42,7 @@ class Account:
         if self.is_float(f'{amount}'.strip()):
             amount = float(f'{amount}'.strip())
             if 0 < amount:
-                self.account_balance += round(amount, 2)
+                self.__account_balance += round(amount, 2)
                 return True
         return False
 
@@ -57,8 +57,8 @@ class Account:
         """
         if self.is_float(f'{amount}'.strip()):
             amount = float(f'{amount}'.strip())
-            if 0 < amount <= self.account_balance:
-                self.account_balance -= round(amount, 2)
+            if 0 < amount <= self.__account_balance:
+                self.__account_balance -= round(amount, 2)
                 return True
         return False
 
@@ -68,7 +68,7 @@ class Account:
         balance
         :return: Float account balance
         """
-        return round(self.account_balance, 2)
+        return round(self.__account_balance, 2)
 
     def get_name(self) -> str:
         """
@@ -76,4 +76,4 @@ class Account:
         name
         :return: String account name
         """
-        return self.account_name
+        return self.__account_name
